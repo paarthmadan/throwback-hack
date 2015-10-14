@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<link rel="stylesheet" href="stylesheet.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#button").click(function (){
+                    $('html, body').animate({
+                        scrollTop: $("#backendpage").offset().top
+                    }, 2000);
+            });
+        });
+
+
+
+        var searchimage = function(image, index){
+
+	        var makerequest= $.ajax({
+	         url: "https://api.gettyimages.com/v3/search/images?fields=id,title,thumb,referral_destinations&sort_order=best&phrase=" + image.replace(' ', '+'),
+	         data: {},
+	         type: "GET",
+	         
+	         beforeSend: function(xhr){xhr.setRequestHeader("Api-Key", "697wgfynhw53p7fzsw7dbder");},
+	         success: function(data) { 
+
+
+	         	
+	         	var data = data.images[index].display_sizes[0].uri;
+	         	$('#backendpage').prepend('<img id="theImg" src="' + data +' " />')
+	         	
+				
+			}
+	         
+      		});
+        	
+
+        }
+
+
+
+function testFunction(){
+
+	
+	var age = document.getElementById('form').value;
+		var genre = document.getElementById('genre');
+	var country = document.getElementById('form3');
+	var year = document.getElementById('form4');
+
+
+
+
+
+
+	console.log("14," + "movies," + "Canada," + "90's");
+	
+}
+
+
+
+
+
+
+    </script>
+
+
+</head>
+
+<title> Throwback Hack </title>
+	
+
+
+<body>
+
+<div id = "welcomeheader">Welcome to Throwback Hack!</div>
+
+<div id = "welcometext">Have you ever been reminded about a thing you experienced from the past! It really does feel great and at throwback hack our goal is to provide you, the user with the opportunity to relive experiences from the past in accordance to your likings.</div>
+
+<div id = "buttonbox"> <div id = "button">Start!</div>
+</div>
+
+This is the results and filters page, above is the welcome page, backend goes down
+
+<div id = "backendpage"> 
+	<div id = "filterbox"> 
+		<form id = "form">
+				Age&#58;<br><input type = number></input>
+		</form>
+		<form id = "form2">
+				<br>
+				<br>
+				Genre
+				<br>
+				<input type="radio" name="genre" value="movies">Movies<br>
+				<input type="radio" name="genre" value="shows">TV Shows <br>
+				<input type="radio" name="genre" value="music">Music<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+
+			</form>
+
+			
+<?php include('countries.php'); ?>
+
+			
+<form id = "form4">
+				<br>
+				<br>
+				Throwback Year
+				<br>
+				<input type="radio" name="tbtime" value="1970's">70's<br>
+				<input type="radio" name="tbtime" value="1980's">80's<br>
+				<input type="radio" name="tbtime" value="1990's">90's<br>
+				<input type="radio" name="tbtime" value="2000's">2000's<br>
+
+
+
+		</form>
+		<div id = "submit" onclick="testFunction()">Submit</div>
+	</div>
+</div>
+
+ 
+
+
+
+
+
+
+</body>
+
+
+</html>

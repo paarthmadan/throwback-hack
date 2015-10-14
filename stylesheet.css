@@ -1,0 +1,122 @@
+#filterbox{
+	position: absolute;
+	width: 100vw;
+	height: 37.5vh;
+	background-color: #4CAF50;
+	left: 0vw;
+	top: 100vh;
+	z-index: 999;
+	
+}
+
+
+
+
+
+
+#welcomeheader{
+	position: absolute;
+	width: 100vw;
+	height: 37.5vh;
+	background-color: #03A9F4;
+	left: 0vw;
+	top: 0vh;
+	z-index: 999;
+	color: white;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	line-height: 37.5vh;
+	font-size: 60px;
+}
+
+#welcometext{
+	position: absolute;
+	width: 75vw;
+	height: 42.5vh;
+	background-color: white;
+	left: 12.5vw;
+	top: 50vh;
+	z-index: 0;
+	color: #01579B;
+	font-family: 'Lato', sans-serif;
+	line-height: 40px;
+	text-align: center;
+	font-size: 22px;
+	
+}
+
+
+#buttonbox{
+	position: absolute;
+	width: 100vw;
+	height: 30vh;
+	background-color: white;
+	left: 0vw;
+	top: 75vh;
+
+	
+}
+
+#FormHeader{
+	position: absolute;
+	width: 100vw;
+	height: 20vh;
+	background-color: #03A9F4;
+	left: 0vw;
+	top: 100vh;
+	z-index: 999;
+	color: white;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	line-height: 20vh;
+	font-size: 60px;
+}
+
+
+#button{
+width: 10vw;
+height: 7.5vh;
+background-color: #03A9F4;
+left: 45vw;
+top: 5vh;
+position: absolute;
+text-align: center;
+color: white;
+font-family: 'Lato', sans-serif;
+font-size: 20px;
+line-height: 7.5vh;
+transition: all 0.3s ease 0s;
+
+}
+
+#button:hover{
+	background-color:#0277BD;
+
+
+}
+
+/*#Form{
+position: absolute;
+	width: 75vw;
+	height: 42.5vh;
+	background-color: white;
+	left: 12.5vw;
+	top: 50vh;
+	z-index: 0;
+	color: #01579B;
+	font-family: 'Lato', sans-serif;
+	line-height: 40px;
+	text-align: center;
+	font-size: 22px;	
+}
+*/
+#backendpage{
+	height:100vh;
+	width:100vw;
+	top:125vh;
+	left:0vw;
+	background-color: white;
+	z-index: 0;
+	position: absolute;
+}
+

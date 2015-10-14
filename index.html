@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<link rel="stylesheet" href="stylesheet.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function (){
+			$("#button").click(function (){
+				$('html, body').animate({
+					scrollTop: $("#FormHeader").offset().top
+				}, 2000);
+			});
+		});
+
+
+		var searchimage = function(image,index){
+			var makerequest= $.ajax({
+				url: "https://api.gettyimages.com/v3/search/images?fields=id,title,thumb,referral_destinations&sort_order=best&phrase=" + image.replace(' ', '+'),
+				data: {},
+				type: "GET",
+				beforeSend: function(xhr){xhr.setRequestHeader("Api-Key", "e8sn4bbvgqxq6fz3ksp3qm68");},
+				success: function(data) { 
+					var data = data.images[index].display_sizes[0].uri;
+					$('#backendpage').prepend('<img id="theImg" src="' + data +' " />')
+
+
+
+
+
+				}
+
+			});
+
+		}
+
+//Number of images that should appear
+
+for(var i = 0; i<5; i++){
+	searchimage("90s TV Shows",i);
+
+}
+
+</script>
+
+
+</head>
+
+
+<title> Throwback Hack </title>
+
+
+
+<body>
+
+	<div id = "welcomeheader">Welcome to Throwback Hack!</div>
+
+	<div id = "welcometext">Have you ever been reminded about a thing you experienced from the past! It really does feel great and at throwback hack our goal is to provide you, the user with the opportunity to relive experiences from the past in accordance to your likings.</div>
+
+	<div id = "buttonbox"> <div id = "button">Start!</div>
+</div>
+
+
+<div id = "FormHeader">Tell Us A Little About Yourself!</div>
+
+<div id = "Form">
+	This should go before image
+</div> 
+
+<div id = "backendpage">	
+</div>
+
+
+
+
+
+
+
+This is the results and filters page, above is the welcome page, backend goes down
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</body>
+
+
+</html>
